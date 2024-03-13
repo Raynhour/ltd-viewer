@@ -1,0 +1,794 @@
+{
+    "_id": "d5e6f0c07de940a816149ee711ac8a0cbe7cfe6675fe4419ab4ba92f0548eec0",
+    "version": "v9.01.2",
+    "date": "2022-03-02T14:17:00.000Z",
+    "queueType": "Classic",
+    "endingWave": 21,
+    "gameLength": 2076,
+    "gameElo": 1489,
+    "playerCount": 8,
+    "humanCount": 8,
+    "spellChoices": [
+      "villain_powerup_id",
+      "giant_snail_powerup_id",
+      "press_the_attack_powerup_id"
+    ],
+    "leftKingPercentHp": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "rightKingPercentHp": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      0.97,
+      1,
+      1,
+      1,
+      0
+    ],
+    "kingSpell": "judgment_ability_id",
+    "playersData": {
+      "playerId": "9A9E6DD4E91D5F41",
+      "playerName": "Jules",
+      "playerSlot": 1,
+      "legion": "CashOut",
+      "workers": 95,
+      "value": 11975,
+      "cross": false,
+      "gameResult": "won",
+      "classicElo": 3361,
+      "overallElo": 2338,
+      "fighters": "Aqua Spirit,Mudman,Golem,Golem,Golem,Golem,Golem,Eggsack,APS,APS,Doomsday Machine,Doomsday Machine,Doomsday Machine,Doomsday Machine,Hydra,Hydra,MPS,Doomsday Machine,Doomsday Machine,APS,Golden Buckler,Fire Elemental,Hydra,Doomsday Machine,Golden Buckler,Doomsday Machine,Oathbreaker,Royal Guard,MPS,Rogue Wave,Rogue Wave,Fire Elemental,Royal Guard,Fire Elemental",
+      "mercenaries": "Snail,Dragon Turtle,Snail,Dragon Turtle,Dragon Turtle,Snail,Dragon Turtle,Snail,Dragon Turtle,Cannoneer,Dragon Turtle,Dino,Dino,Snail,Dino,Drake,Drake,Lizard,Drake,Drake,Drake,Drake,Fiend,Drake,Drake,Dragon Turtle,Drake,Drake,Drake,Drake,Drake,Drake,Drake,Cannoneer,Lizard,Lizard,Snail,Snail,Drake,Drake,Drake,Drake,Drake,Fiend,Drake,Drake,Drake,Drake,Drake,Drake,Drake,Drake,Kraken,Kraken,Kraken,Kraken,Shaman,Witch,Lizard,Lizard",
+      "stayedUntilEnd": true,
+      "chosenSpell": "Villain",
+      "chosenSpellLocation": "4|6",
+      "partySize": 3,
+      "firstWaveFighters": "Fire Elemental",
+      "rolls": "chained_fist_unit_id, golden_buckler_unit_id, aqua_spirit_unit_id, aps_unit_id, eggsack_unit_id, millennium_unit_id",
+      "legionSpecificElo": 2600,
+      "partyMembers": [
+        "Jules",
+        "Lisk",
+        "EpvpDani"
+      ],
+      "partyMembersIds": [
+        "9A9E6DD4E91D5F41",
+        "DCCE8539810097B0",
+        "BBAE0B45BB3E9AB2"
+      ],
+      "mvpScore": 25615,
+      "netWorthPerWave": [
+        462,
+        564,
+        690,
+        822,
+        1022,
+        1258,
+        1520,
+        1852,
+        2185,
+        2600,
+        3104,
+        3723,
+        4421,
+        5230,
+        6179,
+        7447,
+        9050,
+        10874,
+        12795,
+        14983,
+        16959
+      ],
+      "workersPerWave": [
+        5,
+        7,
+        7,
+        8,
+        8,
+        11,
+        13,
+        16,
+        16,
+        19,
+        25,
+        31,
+        31,
+        31,
+        31,
+        81,
+        95,
+        95,
+        95,
+        95,
+        95
+      ],
+      "incomePerWave": [
+        6,
+        18,
+        36,
+        60,
+        84,
+        102,
+        132,
+        168,
+        216,
+        252,
+        318,
+        396,
+        468,
+        558,
+        642,
+        858,
+        1158,
+        1446,
+        1446,
+        1888,
+        2000
+      ],
+      "mercenariesSentPerWave": [
+        [
+          "Snail\""
+        ],
+        [],
+        [
+          "Dragon Turtle\"",
+          "Snail\""
+        ],
+        [
+          "Dragon Turtle\""
+        ],
+        [
+          "Dragon Turtle\"",
+          "Snail\""
+        ],
+        [
+          "Dragon Turtle\"",
+          "Snail\""
+        ],
+        [
+          "Dragon Turtle\""
+        ],
+        [
+          "Cannoneer\"",
+          "Dragon Turtle\""
+        ],
+        [
+          "Dino\""
+        ],
+        [
+          "Dino\"",
+          "Snail\""
+        ],
+        [
+          "Dino\""
+        ],
+        [
+          "Drake\""
+        ],
+        [
+          "Drake\"",
+          "Lizard\""
+        ],
+        [
+          "Drake\"",
+          "Drake\""
+        ],
+        [
+          "Drake\"",
+          "Drake\"",
+          "Fiend\""
+        ],
+        [
+          "Drake\"",
+          "Drake\"",
+          "Dragon Turtle\""
+        ],
+        [
+          "Drake\"",
+          "Drake\"",
+          "Drake\"",
+          "Drake\"",
+          "Drake\"",
+          "Cannoneer\"",
+          "Snail\"",
+          "Drake\"",
+          "Drake\"",
+          "Lizard\"",
+          "Lizard\"",
+          "Snail\""
+        ],
+        [
+          "Drake\"",
+          "Drake\"",
+          "Drake\"",
+          "Drake\"",
+          "Drake\"",
+          "Fiend\""
+        ],
+        [
+          "Drake\"",
+          "Drake\"",
+          "Drake\"",
+          "Drake\"",
+          "Drake\"",
+          "Drake\"",
+          "Drake\"",
+          "Drake\""
+        ],
+        [],
+        [
+          "Shaman\"",
+          "Kraken\"",
+          "Kraken\"",
+          "Kraken\"",
+          "Witch\"",
+          "Lizard\"",
+          "Lizard\"",
+          "Kraken\""
+        ]
+      ],
+      "mercenariesReceivedPerWave": [
+        [
+          "Snail"
+        ],
+        [],
+        [],
+        [
+          "Dragon Turtle"
+        ],
+        [],
+        [
+          "Hermit"
+        ],
+        [
+          "Cannoneer"
+        ],
+        [
+          "Hermit"
+        ],
+        [
+          "Cannoneer",
+          "Hermit\""
+        ],
+        [
+          "Dino",
+          "Snail",
+          "Snail",
+          "Snail"
+        ],
+        [
+          "Fiend"
+        ],
+        [
+          "Drake",
+          "Fiend"
+        ],
+        [
+          "Safety Mole",
+          "Hermit"
+        ],
+        [
+          "Drake"
+        ],
+        [
+          "Pack Leader",
+          "Cannoneer",
+          "Hermit",
+          "Snail"
+        ],
+        [
+          "Drake",
+          "Drake"
+        ],
+        [
+          "Pack Leader",
+          "Safety Mole",
+          "Safety Mole",
+          "Cannoneer",
+          "Hermit",
+          "Hermit",
+          "Dino",
+          "Snail",
+          "Snail"
+        ],
+        [
+          "Pack Leader",
+          "Safety Mole",
+          "Drake",
+          "Drake",
+          "Drake",
+          "Drake",
+          "Hermit",
+          "Snail"
+        ],
+        [
+          "Drake",
+          "Drake",
+          "Drake",
+          "Drake",
+          "Dino"
+        ],
+        [],
+        [
+          "Kraken",
+          "Kraken",
+          "Witch",
+          "Witch",
+          "Witch",
+          "Witch",
+          "Witch",
+          "Witch",
+          "Pack Leader",
+          "Safety Mole",
+          "Hermit",
+          "Hermit"
+        ]
+      ],
+      "leaksPerWave": [
+        [],
+        [],
+        [],
+        [
+          "Flying Chicken",
+          "Flying Chicken",
+          "Flying Chicken",
+          "Flying Chicken",
+          "Flying Chicken",
+          "Flying Chicken",
+          "Flying Chicken",
+          "Flying Chicken",
+          "Flying Chicken"
+        ],
+        [],
+        [],
+        [
+          "Cannoneer"
+        ],
+        [],
+        [
+          "Carapace",
+          "Carapace",
+          "Carapace",
+          "Carapace",
+          "Carapace",
+          "Carapace",
+          "Cannoneer"
+        ],
+        [
+          "Granddaddy"
+        ],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [
+          "Metal Dragon",
+          "Metal Dragon",
+          "Metal Dragon",
+          "Metal Dragon"
+        ],
+        [
+          "Wale Chief",
+          "Wale Chief",
+          "Drake"
+        ],
+        [],
+        [],
+        []
+      ],
+      "buildPerWave": [
+        [
+          "fire_elemental_unit_id:0.5|6"
+        ],
+        [
+          "fire_elemental_unit_id:0.5|6"
+        ],
+        [
+          "fire_elemental_unit_id:0.5|6",
+          "chained_fist_unit_id:8.5|4"
+        ],
+        [
+          "fire_elemental_unit_id:0.5|6",
+          "chained_fist_unit_id:8.5|4",
+          "chained_fist_unit_id:7.5|3.5",
+          "golden_buckler_unit_id:8.5|5"
+        ],
+        [
+          "fire_elemental_unit_id:0.5|6",
+          "chained_fist_unit_id:8.5|4",
+          "chained_fist_unit_id:7.5|3.5",
+          "royal_guard_unit_id:8.5|5"
+        ],
+        [
+          "fire_elemental_unit_id:0.5|6",
+          "chained_fist_unit_id:8.5|4",
+          "chained_fist_unit_id:7.5|3.5",
+          "royal_guard_unit_id:8.5|5",
+          "fire_elemental_unit_id:2.5|5"
+        ],
+        [
+          "fire_elemental_unit_id:0.5|6",
+          "chained_fist_unit_id:8.5|4",
+          "chained_fist_unit_id:7.5|3.5",
+          "royal_guard_unit_id:8.5|5",
+          "fire_elemental_unit_id:2.5|5",
+          "aqua_spirit_unit_id:0.5|5",
+          "aqua_spirit_unit_id:1.5|4.5"
+        ],
+        [
+          "fire_elemental_unit_id:0.5|6",
+          "chained_fist_unit_id:8.5|4",
+          "chained_fist_unit_id:7.5|3.5",
+          "royal_guard_unit_id:8.5|5",
+          "fire_elemental_unit_id:2.5|5",
+          "rogue_wave_unit_id:0.5|5",
+          "aqua_spirit_unit_id:1.5|4.5"
+        ],
+        [
+          "fire_elemental_unit_id:0.5|6",
+          "chained_fist_unit_id:8.5|4",
+          "chained_fist_unit_id:7.5|3.5",
+          "royal_guard_unit_id:8.5|5",
+          "fire_elemental_unit_id:2.5|5",
+          "rogue_wave_unit_id:0.5|5",
+          "aqua_spirit_unit_id:1.5|4.5",
+          "aps_unit_id:1.5|5.5",
+          "golden_buckler_unit_id:0.5|7",
+          "chained_fist_unit_id:8.5|7"
+        ],
+        [
+          "fire_elemental_unit_id:0.5|6",
+          "chained_fist_unit_id:8.5|4",
+          "chained_fist_unit_id:7.5|3.5",
+          "royal_guard_unit_id:8.5|5",
+          "fire_elemental_unit_id:2.5|5",
+          "rogue_wave_unit_id:0.5|5",
+          "aqua_spirit_unit_id:1.5|4.5",
+          "aps_unit_id:1.5|5.5",
+          "golden_buckler_unit_id:0.5|7",
+          "chained_fist_unit_id:8.5|7",
+          "millennium_unit_id:1.5|6.5",
+          "golden_buckler_unit_id:7.5|6.5"
+        ],
+        [
+          "fire_elemental_unit_id:0.5|6",
+          "chained_fist_unit_id:8.5|4",
+          "chained_fist_unit_id:7.5|3.5",
+          "royal_guard_unit_id:8.5|5",
+          "fire_elemental_unit_id:2.5|5",
+          "rogue_wave_unit_id:0.5|5",
+          "rogue_wave_unit_id:1.5|4.5",
+          "aps_unit_id:1.5|5.5",
+          "golden_buckler_unit_id:0.5|7",
+          "chained_fist_unit_id:8.5|7",
+          "millennium_unit_id:1.5|6.5",
+          "golden_buckler_unit_id:7.5|6.5"
+        ],
+        [
+          "fire_elemental_unit_id:0.5|6",
+          "chained_fist_unit_id:8.5|4",
+          "chained_fist_unit_id:7.5|3.5",
+          "royal_guard_unit_id:8.5|5",
+          "fire_elemental_unit_id:2.5|5",
+          "rogue_wave_unit_id:0.5|5",
+          "rogue_wave_unit_id:1.5|4.5",
+          "mps_unit_id:1.5|5.5",
+          "golden_buckler_unit_id:0.5|7",
+          "chained_fist_unit_id:8.5|7",
+          "millennium_unit_id:1.5|6.5",
+          "golden_buckler_unit_id:7.5|6.5"
+        ],
+        [
+          "fire_elemental_unit_id:0.5|6",
+          "chained_fist_unit_id:8.5|4",
+          "chained_fist_unit_id:7.5|3.5",
+          "royal_guard_unit_id:8.5|5",
+          "fire_elemental_unit_id:2.5|5",
+          "rogue_wave_unit_id:0.5|5",
+          "rogue_wave_unit_id:1.5|4.5",
+          "mps_unit_id:1.5|5.5",
+          "golden_buckler_unit_id:0.5|7",
+          "chained_fist_unit_id:8.5|7",
+          "doomsday_machine_unit_id:1.5|6.5",
+          "golden_buckler_unit_id:7.5|6.5"
+        ],
+        [
+          "fire_elemental_unit_id:0.5|6",
+          "chained_fist_unit_id:8.5|4",
+          "chained_fist_unit_id:7.5|3.5",
+          "royal_guard_unit_id:8.5|5",
+          "fire_elemental_unit_id:2.5|5",
+          "rogue_wave_unit_id:0.5|5",
+          "rogue_wave_unit_id:1.5|4.5",
+          "mps_unit_id:1.5|5.5",
+          "golden_buckler_unit_id:0.5|7",
+          "chained_fist_unit_id:8.5|7",
+          "doomsday_machine_unit_id:1.5|6.5",
+          "golden_buckler_unit_id:7.5|6.5",
+          "millennium_unit_id:2.5|6",
+          "eggsack_unit_id:1.5|7.5",
+          "aqua_spirit_unit_id:2.5|8",
+          "golden_buckler_unit_id:7.5|7.5"
+        ],
+        [
+          "fire_elemental_unit_id:0.5|6",
+          "chained_fist_unit_id:8.5|4",
+          "royal_guard_unit_id:8.5|5",
+          "fire_elemental_unit_id:2.5|5",
+          "rogue_wave_unit_id:0.5|5",
+          "rogue_wave_unit_id:1.5|4.5",
+          "mps_unit_id:1.5|5.5",
+          "royal_guard_unit_id:0.5|7",
+          "chained_fist_unit_id:8.5|7",
+          "doomsday_machine_unit_id:1.5|6.5",
+          "golden_buckler_unit_id:7.5|6.5",
+          "doomsday_machine_unit_id:2.5|6",
+          "eggsack_unit_id:1.5|7.5",
+          "fire_elemental_unit_id:2.5|8",
+          "golden_buckler_unit_id:7.5|7.5",
+          "aps_unit_id:2.5|7"
+        ],
+        [
+          "fire_elemental_unit_id:0.5|6",
+          "chained_fist_unit_id:8.5|4",
+          "royal_guard_unit_id:8.5|5",
+          "fire_elemental_unit_id:2.5|5",
+          "rogue_wave_unit_id:0.5|5",
+          "rogue_wave_unit_id:1.5|4.5",
+          "mps_unit_id:1.5|5.5",
+          "royal_guard_unit_id:0.5|7",
+          "chained_fist_unit_id:8.5|7",
+          "doomsday_machine_unit_id:1.5|6.5",
+          "golden_buckler_unit_id:7.5|6.5",
+          "doomsday_machine_unit_id:2.5|6",
+          "hydra_unit_id:1.5|7.5",
+          "fire_elemental_unit_id:2.5|8",
+          "golden_buckler_unit_id:7.5|7.5",
+          "aps_unit_id:2.5|7"
+        ],
+        [
+          "fire_elemental_unit_id:0.5|6",
+          "royal_guard_unit_id:8.5|5",
+          "fire_elemental_unit_id:2.5|5",
+          "rogue_wave_unit_id:0.5|5",
+          "rogue_wave_unit_id:1.5|4.5",
+          "mps_unit_id:1.5|5.5",
+          "royal_guard_unit_id:0.5|7",
+          "chained_fist_unit_id:8.5|7",
+          "doomsday_machine_unit_id:1.5|6.5",
+          "golden_buckler_unit_id:7.5|6.5",
+          "doomsday_machine_unit_id:2.5|6",
+          "hydra_unit_id:1.5|7.5",
+          "fire_elemental_unit_id:2.5|8",
+          "golden_buckler_unit_id:7.5|7.5",
+          "aps_unit_id:2.5|7",
+          "doomsday_machine_unit_id:3.5|6.5"
+        ],
+        [
+          "fire_elemental_unit_id:0.5|6",
+          "royal_guard_unit_id:8.5|5",
+          "fire_elemental_unit_id:2.5|5",
+          "rogue_wave_unit_id:0.5|5",
+          "rogue_wave_unit_id:1.5|4.5",
+          "mps_unit_id:1.5|5.5",
+          "royal_guard_unit_id:0.5|7",
+          "oathbreaker_unit_id:8.5|7",
+          "doomsday_machine_unit_id:1.5|6.5",
+          "golden_buckler_unit_id:7.5|6.5",
+          "doomsday_machine_unit_id:2.5|6",
+          "hydra_unit_id:1.5|7.5",
+          "fire_elemental_unit_id:2.5|8",
+          "golden_buckler_unit_id:7.5|7.5",
+          "aps_unit_id:2.5|7",
+          "doomsday_machine_unit_id:3.5|6.5",
+          "doomsday_machine_unit_id:3.5|7.5",
+          "mps_unit_id:4.5|7",
+          "eggsack_unit_id:0.5|8"
+        ],
+        [
+          "fire_elemental_unit_id:0.5|6",
+          "royal_guard_unit_id:8.5|5",
+          "fire_elemental_unit_id:2.5|5",
+          "rogue_wave_unit_id:0.5|5",
+          "rogue_wave_unit_id:1.5|4.5",
+          "mps_unit_id:1.5|5.5",
+          "royal_guard_unit_id:0.5|7",
+          "oathbreaker_unit_id:8.5|7",
+          "doomsday_machine_unit_id:1.5|6.5",
+          "golden_buckler_unit_id:7.5|6.5",
+          "doomsday_machine_unit_id:2.5|6",
+          "hydra_unit_id:1.5|7.5",
+          "fire_elemental_unit_id:2.5|8",
+          "golden_buckler_unit_id:7.5|7.5",
+          "aps_unit_id:2.5|7",
+          "doomsday_machine_unit_id:3.5|6.5",
+          "doomsday_machine_unit_id:3.5|7.5",
+          "mps_unit_id:4.5|7",
+          "hydra_unit_id:0.5|8",
+          "eggsack_unit_id:3.5|5.5",
+          "doomsday_machine_unit_id:4.5|6",
+          "doomsday_machine_unit_id:5.5|6.5"
+        ],
+        [
+          "fire_elemental_unit_id:0.5|6",
+          "royal_guard_unit_id:8.5|5",
+          "fire_elemental_unit_id:2.5|5",
+          "rogue_wave_unit_id:0.5|5",
+          "rogue_wave_unit_id:1.5|4.5",
+          "mps_unit_id:1.5|5.5",
+          "royal_guard_unit_id:0.5|7",
+          "oathbreaker_unit_id:8.5|7",
+          "doomsday_machine_unit_id:1.5|6.5",
+          "golden_buckler_unit_id:7.5|6.5",
+          "doomsday_machine_unit_id:2.5|6",
+          "hydra_unit_id:1.5|7.5",
+          "fire_elemental_unit_id:2.5|8",
+          "golden_buckler_unit_id:7.5|7.5",
+          "aps_unit_id:2.5|7",
+          "doomsday_machine_unit_id:3.5|6.5",
+          "doomsday_machine_unit_id:3.5|7.5",
+          "mps_unit_id:4.5|7",
+          "hydra_unit_id:0.5|8",
+          "eggsack_unit_id:3.5|5.5",
+          "doomsday_machine_unit_id:4.5|6",
+          "doomsday_machine_unit_id:5.5|6.5",
+          "doomsday_machine_unit_id:5.5|7.5",
+          "doomsday_machine_unit_id:4.5|8",
+          "aps_unit_id:5.5|5.5",
+          "aps_unit_id:5.5|8.5",
+          "eggsack_unit_id:1.5|8.5"
+        ],
+        [
+          "fire_elemental_unit_id:0.5|6",
+          "royal_guard_unit_id:8.5|5",
+          "fire_elemental_unit_id:2.5|5",
+          "rogue_wave_unit_id:0.5|5",
+          "rogue_wave_unit_id:1.5|4.5",
+          "mps_unit_id:1.5|5.5",
+          "royal_guard_unit_id:0.5|7",
+          "oathbreaker_unit_id:8.5|7",
+          "doomsday_machine_unit_id:1.5|6.5",
+          "golden_buckler_unit_id:7.5|6.5",
+          "doomsday_machine_unit_id:2.5|6",
+          "hydra_unit_id:1.5|7.5",
+          "fire_elemental_unit_id:2.5|8",
+          "golden_buckler_unit_id:7.5|7.5",
+          "aps_unit_id:2.5|7",
+          "doomsday_machine_unit_id:3.5|6.5",
+          "doomsday_machine_unit_id:3.5|7.5",
+          "mps_unit_id:4.5|7",
+          "hydra_unit_id:0.5|8",
+          "hydra_unit_id:3.5|5.5",
+          "doomsday_machine_unit_id:4.5|6",
+          "doomsday_machine_unit_id:5.5|6.5",
+          "doomsday_machine_unit_id:5.5|7.5",
+          "doomsday_machine_unit_id:4.5|8",
+          "aps_unit_id:5.5|5.5",
+          "aps_unit_id:5.5|8.5",
+          "eggsack_unit_id:1.5|8.5",
+          "golem_unit_id:2.5|9",
+          "golem_unit_id:0.5|9",
+          "golem_unit_id:8.5|8",
+          "golem_unit_id:3.5|8.5",
+          "golem_unit_id:7.5|8.5",
+          "mudman_unit_id:6.5|8",
+          "aqua_spirit_unit_id:4.5|5"
+        ]
+      ],
+      "leakValue": "349,",
+      "leaksCaughtValue": "1266,",
+      "leftAtSeconds": "-1,",
+      "kingUpgradesPerWave": [
+        [],
+        [],
+        [],
+        [
+          "Upgrade King Attack"
+        ],
+        [
+          "Upgrade King Spell"
+        ],
+        [
+          "Upgrade King Spell"
+        ],
+        [],
+        [],
+        [
+          "Upgrade King Spell",
+          "Upgrade King Spell",
+          "Upgrade King Spell"
+        ],
+        [
+          "Upgrade King Attack",
+          "Upgrade King Attack"
+        ],
+        [
+          "Upgrade King Spell",
+          "Upgrade King Spell",
+          "Upgrade King Attack",
+          "Upgrade King Attack",
+          "Upgrade King Attack"
+        ],
+        [
+          "Upgrade King Regen",
+          "Upgrade King Regen",
+          "Upgrade King Regen",
+          "Upgrade King Regen",
+          "Upgrade King Regen"
+        ],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        []
+      ],
+      "opponentKingUpgradesPerWave": [
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [
+          "Upgrade King Regen",
+          "Upgrade King Regen",
+          "Upgrade King Regen"
+        ],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        []
+      ]
+    }
+  }

@@ -1,5 +1,15 @@
 <script setup lang="ts">
+import { provide } from 'vue'
 import {  RouterView } from 'vue-router'
+import auth from "@/api/initApi"
+import { useQueryProvider } from "vue-query";
+import INJECTIONS from './consts/injections';
+
+useQueryProvider();
+
+// auth.get('https://apiv2.legiontd2.com/players/byName/raynhour')
+
+provide(INJECTIONS.API, auth)
 </script>
 
 <template>
@@ -11,7 +21,7 @@ import {  RouterView } from 'vue-router'
 
 <style scoped>
 .bg-pattern {
-  background: radial-gradient(transparent 95%, #327e48 80%);
+  /* background: radial-gradient(transparent 95%, #327e48 80%); */
   background-size: 5em 5em;
   background-color: #000000;
   opacity: 1
