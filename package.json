@@ -18,6 +18,7 @@
   "dependencies": {
     "axios-mock-adapter": "^1.22.0",
     "flush-promises": "^1.0.2",
+    "sass": "^1.72.0",
     "vite-plugin-vuetify": "^2.0.2",
     "vue": "^3.4.15",
     "vue-query": "^1.26.0",
