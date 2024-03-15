@@ -1,11 +1,11 @@
 import { describe, it, expect } from 'vitest'
 import {  mount } from '@vue/test-utils'
 import type { GlobalMountOptions } from "@vue/test-utils/dist/types";
-import Component from './GameWrapper.vue'
+import Component from './GameResult.vue'
 import { createVuetify } from 'vuetify'
 import * as components from 'vuetify/components'
-import GameTable from './GameTable.vue';
-import GameFixture from '../../../cypress/fixtures/game.json'
+import GameTable from '@/components/game/GameTable.vue';
+import GameFixture from '../../cypress/fixtures/game.json'
 
 global.ResizeObserver = require('resize-observer-polyfill')
 

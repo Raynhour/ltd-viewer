@@ -1,63 +1,42 @@
 <template>
 <div class="text-left">
-    <div class="result" :class="firstTeamGameResult.isWin ? 'text-green' : 'text-red'"> {{ firstTeamGameResult.title }}</div>
-    <GameTable :players="firstTeam" />
-    <div class="result" :class=" secondTeamGameResult.isWin ? 'text-green' : 'text-red'">{{  secondTeamGameResult.title}}</div>
-    <GameTable :players="secondTeam" />
+        <v-tabs
+            bg-color="primary"
+        >
+            <v-tab :to="{name: ROUTER_NAMES.GAME_RESULT, params: {id: route.params.id}}">Result</v-tab>
+            <v-tab :to="{name: ROUTER_NAMES.GAME_BUILD, params: {id: route.params.id}}">Builds</v-tab>
+        </v-tabs>
+        <router-view :data="data" />
+
+        <!-- <v-window v-model="tab">
+            <v-window-item value="result">
+                <div class="result" :class="firstTeamGameResult.isWin ? 'text-green' : 'text-red'"> {{ firstTeamGameResult.title }}</div>
+                <GameTable :players="firstTeam" />
+                <div class="result" :class=" secondTeamGameResult.isWin ? 'text-green' : 'text-red'">{{  secondTeamGameResult.title}}</div>
+                <GameTable :players="secondTeam" />
+            </v-window-item>
+
+            <v-window-item value="builds">
+                <GameBuilds :players="playersData" />
+            </v-window-item>
+
+        </v-window> -->
+   
 </div>
 </template>
 
 <script setup lang="ts">
-import type { Game, PlayersDataEntity } from "@/entities/game.type";
-import { computed, toRefs } from "vue";
+import { useRoute } from "vue-router";
+import type { Game } from "@/entities/game.type";
 
-import GameTable from "./GameTable.vue";
+import ROUTER_NAMES from "@/router/routerNames";
 
-const props = defineProps<{
+
+
+ defineProps<{
     data: Game
 }>()
 
-const { data } = toRefs(props)
-const { playersData } = toRefs(data.value)
-
-const formattedData = computed(() => {
-    return playersData.value.map(player => {
-        return {
-            ...player,
-            income: player.incomePerWave[player.incomePerWave.length - 1],
-            netWorth: player.netWorthPerWave[player.netWorthPerWave.length - 1],
-        }
-    })
-})
-
-const firstTeam = computed( () => {
-    return formattedData?.value?.slice(0, middleIndex.value)
-})
-
-const middleIndex = computed(() => {
-    return Math.ceil(formattedData.value.length ? formattedData.value.length / 2 : 0)
-})
-
-const secondTeam = computed( () => {
-    return formattedData?.value?.slice(middleIndex.value)
-})
-
-const firstTeamGameResult = computed(() => {
-    return {
-        title: firstTeam.value[0].gameResult,
-        isWin: isPlayerWin(firstTeam.value[0])
-    } 
-})
-
-function isPlayerWin(player: PlayersDataEntity) {
-    return player.gameResult === "won"
-}
-
-const secondTeamGameResult = computed(() => {
-    return {
-        title: secondTeam.value[0].gameResult,
-        isWin: isPlayerWin(secondTeam.value[0])
-    } 
-})
+const route = useRoute()
 
 </script>
