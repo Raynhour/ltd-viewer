@@ -47,10 +47,10 @@ export interface Game {
     valuePerWave?: (number)[] | null;
     workersPerWave?: (number)[] | null;
     incomePerWave: (number)[];
-    mercenariesSentPerWave?: ((string | null)[] | null)[] | null;
-    mercenariesReceivedPerWave?: ((string | null)[] | null)[] | null;
-    leaksPerWave?: ((string | null)[] | null)[] | null;
-    buildPerWave?: ((string)[] | null)[] | null;
+    mercenariesSentPerWave: ((string | null)[] | null)[];
+    mercenariesReceivedPerWave: ((string | null)[] | null)[];
+    leaksPerWave: ((string | null)[] | null)[];
+    buildPerWave: ((string)[] | null)[];
     leakValue: number;
     leaksCaughtValue: number;
     leftAtSeconds: number;
@@ -58,5 +58,7 @@ export interface Game {
     opponentKingUpgradesPerWave?: ((string | null)[] | null)[] | null;
     megamind: boolean;
     chosenChampionLocation: string;
+    income?: number;
+    netWorth?: number;
   }
   

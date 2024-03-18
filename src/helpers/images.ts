@@ -1,11 +1,13 @@
 import { MASTERMINDS } from "@/consts/masterminds.enum"
 
-export function iconPath(name: string): string{
+export function iconPath(name: string, {fileType = 'png'}= {}): string{
     name = name.replace(/\s/g, '');
-    return `https://cdn.legiontd2.com/Icons/${name}.png`
+    const type = fileType ? `.${fileType}` : '';
+    return `${import.meta.env.VITE_IMAGES_SRC}/Icons/${name}${type}`
 }
+
 export function mastermindIconPath(mastermid: string): string{
-    return `https://cdn.legiontd2.com/Icons/Items/MastermindVariant${mastermindKey(mastermid)}.png`
+    return `${import.meta.env.VITE_IMAGES_SRC}/Icons/Items/MastermindVariant${mastermindKey(mastermid)}.png`
 }
 
 function mastermindKey(mastermind: string): string{
@@ -25,6 +27,10 @@ function mastermindKey(mastermind: string): string{
         [MASTERMINDS.DOUBLE_LOCK_IN]: '13',
         [MASTERMINDS.MEGAMIND]: '14',
     }
+
+    let _mastermind = 'undefined'
+
+    if(mastermind in masterminds) _mastermind = masterminds[mastermind as keyof typeof masterminds]
     
-    return masterminds[mastermind]
+    return _mastermind
 }

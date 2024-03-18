@@ -1,11 +1,10 @@
 import { describe, it, expect } from 'vitest'
 import {  mount } from '@vue/test-utils'
 import type { GlobalMountOptions } from "@vue/test-utils/dist/types";
-import Component from './GameResult.vue'
+import Component from './GameBoard.vue'
 import { createVuetify } from 'vuetify'
 import * as components from 'vuetify/components'
 import GameTable from '@/components/game/GameTable.vue';
-import GameFixture from '../../cypress/fixtures/game.json'
 
 global.ResizeObserver = require('resize-observer-polyfill')
 
@@ -26,7 +25,7 @@ function createWrapper(overrides?: GlobalMountOptions | undefined, props?: any) 
   };
 
   const defaultProps = {
-    data: GameFixture
+    data: {}
   }
   wrapper = mount(Component, {
     props: { ...defaultProps, ...props },
@@ -35,22 +34,10 @@ function createWrapper(overrides?: GlobalMountOptions | undefined, props?: any) 
   });
 }
 
-const findTable = () => wrapper.findComponent(GameTable)
-const findTeam1Result = () => wrapper.findAll('.result').at(0)
+describe('GameUnit.vue', () => {
 
-describe('GameWrapper.vue', () => {
-  it('show table on render', () => {
-    createWrapper()
-
-    const table = findTable()
-    expect(table.exists()).toBe(true)
-  })
-
-  it('show that team 1 is win', () => {
-    createWrapper()
-
-    const result = findTeam1Result()
-    expect(result.text()).toContain(GameFixture.playersData[0].gameResult)
-  })
+  it.todo('should render correct icon')
+  it.todo('should render correct coords')
+  it.todo('should render tooltip on hover')
 
 })

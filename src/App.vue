@@ -5,6 +5,7 @@ import auth from "@/api/initApi"
 import { useQueryProvider } from "vue-query";
 import INJECTIONS from './consts/injections';
 
+
 useQueryProvider();
 
 // auth.get('https://apiv2.legiontd2.com/players/byName/raynhour')

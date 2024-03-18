@@ -40,7 +40,6 @@ export default class Api implements ApiContractor {
       method: 'get'
     }
     _config.method = 'get'
-    console.log(url)
     const res: Promise<any> = await this.request(url, { ...config, ..._config })
     return res
   }
