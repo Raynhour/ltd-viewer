@@ -6,7 +6,7 @@ export default (api: ApiContractor) => {
   const gameService = new GameService(api)
 
   const game = (id: string) => {
-    const res = useQuery(
+    return useQuery(
       ['search', id],
       async () => {
         const response = await gameService.game(id)
@@ -17,8 +17,6 @@ export default (api: ApiContractor) => {
         refetchOnReconnect: false
       }
     )
-
-    return res
   }
 
   return { game }
