@@ -4,21 +4,23 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import Vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
 
-
 // https://vitejs.dev/config/
 export default defineConfig({
+  build: {
+    watch: false
+  },
   plugins: [
     vue(),
     Vuetify({
-      autoImport: true,
+      autoImport: true
       // styles: {
       //   configFile: 'src/styles/settings.scss',
       // },
-    }),
+    })
   ],
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
-  },
+  }
 })
