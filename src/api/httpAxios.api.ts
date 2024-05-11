@@ -3,9 +3,11 @@ import qs from 'qs'
 
 import type { HttpContractorInstance } from '../contractors/http.contractor'
 import type { Config } from './api'
-import mock from "@/__mocks__/axios.mock"
+import mock from '@/__mocks__/axios.mock'
 
-if(import.meta.env.VITE_API_MOCKED) mock(axios)
+console.log(typeof import.meta.env.VITE_API_MOCKED)
+
+if (import.meta.env.VITE_API_MOCKED) mock(axios)
 
 export default class HttpAxios implements HttpContractorInstance {
   URL: string

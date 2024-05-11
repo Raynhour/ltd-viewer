@@ -8,7 +8,7 @@ export enum MASTERMINDS {
   CASTLE = 'Castle',
   CASH_OUT = 'CashOut',
   LOCK_IN = 'LockIn',
-  YOLO = 'YOLO',
+  YOLO = 'Yolo',
   KINGSGUARD = 'Kingsguard',
   FIESTA = 'Fiesta',
   CHAMPION = 'Champion',

@@ -1,10 +1,10 @@
 import { describe, it, expect } from 'vitest'
-import {  mount } from '@vue/test-utils'
-import type { GlobalMountOptions } from "@vue/test-utils/dist/types";
+import { mount } from '@vue/test-utils'
+import type { GlobalMountOptions } from '@vue/test-utils/dist/types'
 import Component from './GameResult.vue'
 import { createVuetify } from 'vuetify'
 import * as components from 'vuetify/components'
-import GameTable from '@/components/game/GameTable.vue';
+import GameTable from '@/components/game/GameTable.vue'
 import GameFixture from '../../cypress/fixtures/game.json'
 
 global.ResizeObserver = require('resize-observer-polyfill')
@@ -13,17 +13,17 @@ const vuetify = createVuetify({
   components
 })
 
-let wrapper: any;
+let wrapper: any
 function createWrapper(overrides?: GlobalMountOptions | undefined, props?: any) {
   const defaultMountingOptions = {
-      global: {
-        sync: false,
-        plugins: [vuetify],
-        stubs: {
-          transition: false,
-        },
+    global: {
+      sync: false,
+      plugins: [vuetify],
+      stubs: {
+        transition: false
       }
-  };
+    }
+  }
 
   const defaultProps = {
     data: GameFixture
@@ -31,8 +31,8 @@ function createWrapper(overrides?: GlobalMountOptions | undefined, props?: any) 
   wrapper = mount(Component, {
     props: { ...defaultProps, ...props },
     ...defaultMountingOptions,
-    ...overrides,
-  });
+    ...overrides
+  })
 }
 
 const findTable = () => wrapper.findComponent(GameTable)
@@ -49,8 +49,7 @@ describe('GameWrapper.vue', () => {
   it('show that team 1 is win', () => {
     createWrapper()
 
-    const result = findTeam1Result()
-    expect(result.text()).toContain(GameFixture.playersData[0].gameResult)
+    const table = findTable()
+    expect(table.props().isWin).toBe(true)
   })
-
 })

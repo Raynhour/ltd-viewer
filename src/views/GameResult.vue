@@ -1,65 +1,67 @@
 <template>
-<div>
-    <div class="result" :class="firstTeamGameResult.isWin ? 'text-green' : 'text-red'"> {{ firstTeamGameResult.title }}</div>
-    <GameTable :players="firstTeam" />
-    <div class="result" :class=" secondTeamGameResult.isWin ? 'text-green' : 'text-red'">{{  secondTeamGameResult.title}}</div>
-    <GameTable :players="secondTeam" />
-</div>
+  <div class="w-100">
+    <div class="d-flex justify-space-between">
+      <div class="result" :class="firstTeamGameResult.isWin ? 'text-green' : 'text-red'">
+        {{ firstTeamGameResult.title }}
+      </div>
 
+      <span class="patch">{{ data.version }} </span>
+    </div>
+    <GameTable :players="firstTeam" :isWin="firstTeamGameResult.isWin" />
+    <div class="result" :class="secondTeamGameResult.isWin ? 'text-green' : 'text-red'">
+      {{ secondTeamGameResult.title }}
+    </div>
+    <GameTable :players="secondTeam" :isWin="secondTeamGameResult.isWin" />
+  </div>
 </template>
 
 <script setup lang="ts">
-import type { Game, PlayersDataEntity } from "@/entities/game.type";
-import { computed, toRefs } from "vue";
+import type { Game, PlayersDataEntity } from '@/entities/game.type'
+import { computed, toRefs } from 'vue'
 
-
-import GameTable from "@/components/game/GameTable.vue";
+import GameTable from '@/components/game/GameTable.vue'
+import useTeams from '@/composables/useTeams'
 
 const props = defineProps<{
-    data: Game
+  data: Game
 }>()
 
-
-const { data } = toRefs(props)
-const { playersData } = toRefs(data.value)
+const { playersData } = toRefs(props.data)
 
 const formattedData = computed(() => {
-    return playersData.value.map(player => {
-        return {
-            ...player,
-            income: player.incomePerWave[player.incomePerWave.length - 1],
-            netWorth: player.netWorthPerWave[player.netWorthPerWave.length - 1],
-        }
-    })
+  return playersData.value.map((player) => {
+    return {
+      ...player,
+      income: player.incomePerWave[player.incomePerWave.length - 1],
+      netWorth: player.netWorthPerWave[player.netWorthPerWave.length - 1]
+    }
+  })
 })
 
-const firstTeam = computed( () => {
-    return formattedData?.value?.slice(0, middleIndex.value)
-})
-
-const middleIndex = computed(() => {
-    return Math.ceil(formattedData.value.length ? formattedData.value.length / 2 : 0)
-})
-
-const secondTeam = computed( () => {
-    return formattedData?.value?.slice(middleIndex.value)
-})
+const { firstTeam, secondTeam } = useTeams(formattedData)
 
 const firstTeamGameResult = computed(() => {
-    return {
-        title: firstTeam.value[0].gameResult,
-        isWin: isPlayerWin(firstTeam.value[0])
-    } 
+  const isWin = isPlayerWin(firstTeam.value[0])
+  return {
+    title: playerResultText(isWin),
+    isWin
+  }
 })
 
 function isPlayerWin(player: PlayersDataEntity) {
-    return player.gameResult === "won"
+  return player.gameResult === 'won'
+}
+
+const playerResultText = (isWin: boolean) => {
+  return isWin ? 'Victory!' : 'Defeat!'
 }
 
 const secondTeamGameResult = computed(() => {
-    return {
-        title: secondTeam.value[0].gameResult,
-        isWin: isPlayerWin(secondTeam.value[0])
-    } 
+  const isWin = isPlayerWin(secondTeam.value[0])
+
+  return {
+    title: playerResultText(isWin),
+    isWin
+  }
 })
 </script>

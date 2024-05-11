@@ -1,42 +1,47 @@
 <template>
-<div class="text-left">
-        <v-tabs
-            bg-color="primary"
+  <div class="text-left">
+    <Teleport to="#header">
+      <v-tabs align-tabs="center" bg-color="basil" grow class="game-tabs">
+        <v-tab :to="{ name: ROUTER_NAMES.GAME_RESULT, params: { id: route.params.id } }"
+          >Result</v-tab
         >
-            <v-tab :to="{name: ROUTER_NAMES.GAME_RESULT, params: {id: route.params.id}}">Result</v-tab>
-            <v-tab :to="{name: ROUTER_NAMES.GAME_BUILD, params: {id: route.params.id}}">Builds</v-tab>
-        </v-tabs>
-        <router-view :data="data" />
-
-        <!-- <v-window v-model="tab">
-            <v-window-item value="result">
-                <div class="result" :class="firstTeamGameResult.isWin ? 'text-green' : 'text-red'"> {{ firstTeamGameResult.title }}</div>
-                <GameTable :players="firstTeam" />
-                <div class="result" :class=" secondTeamGameResult.isWin ? 'text-green' : 'text-red'">{{  secondTeamGameResult.title}}</div>
-                <GameTable :players="secondTeam" />
-            </v-window-item>
-
-            <v-window-item value="builds">
-                <GameBuilds :players="playersData" />
-            </v-window-item>
-
-        </v-window> -->
-   
-</div>
+        <v-tab :to="{ name: ROUTER_NAMES.GAME_BUILD, params: { id: route.params.id } }"
+          >Builds</v-tab
+        >
+      </v-tabs>
+    </Teleport>
+    <router-view :data="data" />
+  </div>
 </template>
 
 <script setup lang="ts">
-import { useRoute } from "vue-router";
-import type { Game } from "@/entities/game.type";
+import { useRoute } from 'vue-router'
+import type { Game } from '@/entities/game.type'
 
-import ROUTER_NAMES from "@/router/routerNames";
+import ROUTER_NAMES from '@/router/routerNames'
 
-
-
- defineProps<{
-    data: Game
+defineProps<{
+  data: Game
 }>()
 
 const route = useRoute()
-
 </script>
+
+<style lang="scss">
+.bg-basil {
+  background-color: rgba(49, 62, 61, 0.85) !important;
+}
+
+.game-tabs {
+  .v-tab {
+    &--selected {
+      .v-btn__content {
+        font-weight: bold;
+      }
+      .v-tab__slider {
+        background-color: rgb(var(--v-theme-success)) !important;
+      }
+    }
+  }
+}
+</style>

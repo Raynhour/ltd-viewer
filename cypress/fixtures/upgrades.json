@@ -1,0 +1,47 @@
+[
+    {
+        "goldCostPerLevel": "0",
+        "descriptionId": "king_regen_research_id_description",
+        "goldCost": "0",
+        "legionId": "aspect_legion_id",
+        "mythiumCost": "20",
+        "mythiumCostPerLevel": "6",
+        "name": "Upgrade King Regen",
+        "category": "researches",
+        "tooltip": "Increases the King's health regen by 0.004% missing health + 0.004% max health",
+        "description": "Increases the King's health regen by $1% missing health + $2% max health",
+        "_id": "king_regen_research_id",
+        "iconPath": "Icons/UpgradeKingRegen.png",
+        "levels": "10"
+    },
+    {
+        "goldCostPerLevel": "0",
+        "descriptionId": "king_regen_research_id_description",
+        "goldCost": "0",
+        "legionId": "aspect_legion_id",
+        "mythiumCost": "20",
+        "mythiumCostPerLevel": "6",
+        "name": "Upgrade King Attack",
+        "category": "researches",
+        "tooltip": "Increases the King's health regen by 0.004% missing health + 0.004% max health",
+        "description": "Increases the King's health regen by $1% missing health + $2% max health",
+        "_id": "king_attack_research_id",
+        "iconPath": "Icons/UpgradeKingRegen.png",
+        "levels": "10"
+    },
+    {
+        "goldCostPerLevel": "0",
+        "descriptionId": "king_regen_research_id_description",
+        "goldCost": "0",
+        "legionId": "aspect_legion_id",
+        "mythiumCost": "20",
+        "mythiumCostPerLevel": "6",
+        "name": "Upgrade King Spell",
+        "category": "researches",
+        "tooltip": "Increases the King's health regen by 0.004% missing health + 0.004% max health",
+        "description": "Increases the King's health regen by $1% missing health + $2% max health",
+        "_id": "king_attack_research_id",
+        "iconPath": "Icons/UpgradeKingRegen.png",
+        "levels": "10"
+    }
+]
