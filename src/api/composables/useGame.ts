@@ -13,6 +13,7 @@ export default (api: ApiContractor) => {
         return response
       },
       {
+        retry: 0,
         refetchOnWindowFocus: false, // Disable refetching on window focus
         refetchOnReconnect: false
       }

@@ -14,18 +14,34 @@ provide(INJECTIONS.API, auth)
 
 <template>
   <v-app dark class="bg-pattern">
+    <video playsinline autoplay muted loop>
+      <source src="/king.webm" type="video/webm" />
+    </video>
     <router-view />
   </v-app>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 .bg-pattern {
   /* background: radial-gradient(transparent 95%, #327e48 80%); */
   /* background-size: 5em 5em;
   background-color: #000000;
   opacity: 1 */
-  background-image: url('/bg.jpg');
+  /* background-image: url('/bg.jpg');
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover; */
+  position: relative;
+  overflow: hidden;
+  video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: 0;
+    transform: translate(-50%, -50%);
+  }
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <header class="header d-flex">
+  <header class="header d-flex position-relative">
     <v-btn
       variant="text"
       :to="{ name: routerNames.HOME }"
