@@ -14,7 +14,7 @@
             color="primary"
             append-inner-icon="mdi-magnify"
             variant="solo-filled"
-            label="Game ID"
+            label="Nickname or Game ID"
             @change="search"
           />
         </v-col>
