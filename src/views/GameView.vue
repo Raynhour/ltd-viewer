@@ -1,11 +1,6 @@
 <template>
   <header class="header d-flex position-relative">
-    <v-btn
-      variant="text"
-      :to="{ name: routerNames.HOME }"
-      color="orange"
-      icon="mdi-arrow-left"
-    ></v-btn>
+    <v-btn variant="text" @click="$router.go(-1)" color="orange" icon="mdi-arrow-left"></v-btn>
     <div id="header" class="container w-100"></div>
   </header>
 

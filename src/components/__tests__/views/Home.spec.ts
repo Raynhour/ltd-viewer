@@ -46,8 +46,8 @@ describe('HomeView.vue', () => {
     expect(wrapper.text()).toContain('Viewer')
   })
 
-  it('redirect to /search when search button is clicked', async () => {
-    const triggerValue = 'test'
+  it('redirect to game when search button is clicked', async () => {
+    const triggerValue = '889ca22cf4c53e2a9ba855dcb2528439f8bd6f379aeeb85e0b88c48d18f5d78e'
 
     createWrapper()
 
@@ -56,6 +56,19 @@ describe('HomeView.vue', () => {
     expect(useRouter().push).toHaveBeenCalledWith({
       name: routerNames.GAME_RESULT,
       params: { id: triggerValue }
+    })
+  })
+
+  it('redirect to player when search button is clicked', async () => {
+    const triggerValue = 'ray'
+
+    createWrapper()
+
+    await findSearchField().setValue(triggerValue)
+
+    expect(useRouter().push).toHaveBeenCalledWith({
+      name: routerNames.PLAYER_HISTORY,
+      query: { name: triggerValue }
     })
   })
 })

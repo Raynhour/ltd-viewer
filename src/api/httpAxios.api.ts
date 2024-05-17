@@ -5,8 +5,6 @@ import type { HttpContractorInstance } from '../contractors/http.contractor'
 import type { Config } from './api'
 import mock from '@/__mocks__/axios.mock'
 
-console.log(typeof import.meta.env.VITE_API_MOCKED)
-
 if (import.meta.env.VITE_API_MOCKED) mock(axios)
 
 export default class HttpAxios implements HttpContractorInstance {

@@ -1,5 +1,5 @@
 <template>
-  <div class="unit" :style="unitPosition">
+  <div class="unit">
     <img
       v-if="hasChampion"
       :src="mastermindIconPath(MASTERMINDS.CHAMPION)"
@@ -22,14 +22,9 @@ import { MASTERMINDS } from '@/consts/masterminds.enum'
 
 const props = defineProps<{
   unit: string
-  rows: number
   units: Unit[]
-  championCoords: { x: number; y: number }
+  hasChampion: boolean
 }>()
-
-const unitPosition = computed(() => {
-  return _unitPosition(props.unit)
-})
 
 const matchedUnit = computed(() => {
   return _unit(props.unit, props.units)
@@ -42,25 +37,6 @@ const unitName = computed(() => {
 const unitIcon = computed(() => {
   return `${import.meta.env.VITE_IMAGES_SRC}/${matchedUnit.value?.iconPath}`
 })
-
-const hasChampion = computed(() => {
-  const coords = props.championCoords
-  if (
-    coords.x === unitPosition.value.gridColumnStart &&
-    coords.y === unitPosition.value.gridRowStart
-  ) {
-    return true
-  }
-  return false
-})
-
-function _unitPosition(unit: string) {
-  const coords = _unitCoords(unit, props.rows)
-  return {
-    gridColumnStart: coords.x,
-    gridRowStart: coords.y
-  }
-}
 
 function _unit(unit: string, units: Unit[]): Unit | undefined {
   const name = unit.split(':')[0]

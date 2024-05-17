@@ -25,7 +25,7 @@ let mockWave = 1
 vi.mock('vue-router', () => ({
   ...vi.importActual('vue-router'), // Import then override
   useRouter: vi.fn(() => ({
-    push: push
+    replace: push
   })),
   useRoute: vi.fn(() => ({
     query: {

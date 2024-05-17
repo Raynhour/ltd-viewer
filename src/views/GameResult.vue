@@ -21,6 +21,7 @@ import { computed, toRefs } from 'vue'
 
 import GameTable from '@/components/game/GameTable.vue'
 import useTeams from '@/composables/useTeams'
+import { isPlayerWin, playerResultText } from '@/helpers/playerHelper'
 
 const props = defineProps<{
   data: Game
@@ -47,15 +48,6 @@ const firstTeamGameResult = computed(() => {
     isWin
   }
 })
-
-function isPlayerWin(player: PlayersDataEntity) {
-  return player.gameResult === 'won'
-}
-
-const playerResultText = (isWin: boolean) => {
-  return isWin ? 'Victory!' : 'Defeat!'
-}
-
 const secondTeamGameResult = computed(() => {
   const isWin = isPlayerWin(secondTeam.value[0])
 

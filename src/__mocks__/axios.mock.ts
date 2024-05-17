@@ -9,5 +9,7 @@ export default (axios: AxiosInstance): MockAdapter => {
   mock.onGet(PATH.GAME('123')).reply(200, GameFixture)
   mock.onGet(PATH.GAME('error')).reply(500, { error: 'error' })
 
+  mock.onGet(PATH.PLAYER.HISTORY('raynhour')).reply(200, [GameFixture, GameFixture])
+
   return mock
 }

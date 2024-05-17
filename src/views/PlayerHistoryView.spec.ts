@@ -1,9 +1,8 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest'
 import { flushPromises, mount } from '@vue/test-utils'
 import type { GlobalMountOptions } from '@vue/test-utils/dist/types'
-import { RouterView, useRouter } from 'vue-router'
 import { VueQueryPlugin, QueryClient } from 'vue-query'
-import Component from '@/views/SearchView.vue'
+import Component from '@/views/PlayerHistoryView.vue'
 import { createVuetify } from 'vuetify'
 import * as components from 'vuetify/components'
 import { nextTick } from 'vue'
@@ -12,14 +11,15 @@ import injections from '@/consts/injections'
 
 import axios from 'axios'
 import axiosMock from '@/__mocks__/axios.mock'
-import { PATH } from '@/consts/apiPath.const'
-import GameWrapper from '@/components/game/GameWrapper.vue'
+import GameCard from '@/components/game/card/GameCard.vue'
+
+axiosMock(axios)
 
 global.ResizeObserver = require('resize-observer-polyfill')
 
 const push = vi.fn()
 
-let mockId = '123'
+let mockName = 'raynhour'
 
 vi.mock('vue-router', () => ({
   ...vi.importActual('vue-router'), // Import then override
@@ -28,8 +28,8 @@ vi.mock('vue-router', () => ({
     push: push
   })),
   useRoute: vi.fn(() => ({
-    params: {
-      id: mockId
+    query: {
+      name: mockName
     }
   }))
 }))
@@ -56,7 +56,8 @@ function createWrapper(overrides?: GlobalMountOptions | undefined) {
       plugins: [vuetify, [VueQueryPlugin, vueQueryPluginOptions]],
       stubs: {
         transition: false,
-        'router-view': true
+        'router-view': true,
+        'router-link': true
       },
       provide: {
         [injections.API]: auth
@@ -68,11 +69,11 @@ function createWrapper(overrides?: GlobalMountOptions | undefined) {
 
 const findPreloader = () => wrapper.findComponent({ name: 'v-progress-circular' })
 const findError = () => wrapper.findComponent({ name: 'v-alert' })
-const findGame = () => wrapper.findComponent(GameWrapper)
+const findGames = () => wrapper.findAllComponents(GameCard)
 
 axiosMock(axios)
 
-describe('SearchView.vue', () => {
+describe('PlayerHistoryView.vue', () => {
   beforeEach(() => {
     // create teleport target
     const el = document.createElement('div')
@@ -85,8 +86,8 @@ describe('SearchView.vue', () => {
     const preloader = findPreloader()
     expect(preloader.exists()).toBe(true)
   })
-  it('showed error state when search failed', async () => {
-    mockId = 'error'
+  it('showed error state when failed', async () => {
+    mockName = 'error'
     createWrapper()
 
     await flushPromises()
@@ -95,14 +96,14 @@ describe('SearchView.vue', () => {
     const error = findError()
     expect(error.exists()).toBe(true)
   })
-  it('showed search result when search success', async () => {
-    mockId = '123'
+  it('showed games', async () => {
+    mockName = 'raynhour'
 
     createWrapper()
 
     await flushPromises()
 
-    const game = findGame()
-    expect(game.exists()).toBe(true)
+    const games = findGames()
+    expect(games.length).toBe(2)
   })
 })

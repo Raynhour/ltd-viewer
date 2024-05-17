@@ -1,19 +1,19 @@
 <template>
-  <div class="ma-2 game-stats">
+  <div class="game-stats">
     <div class="d-flex w-100 align-center items-center game-stats__wrapper">
-      <div class="stat-item d-flex align-center text-green-darken-1 mr-1">
+      <div class="stat-item d-flex align-center text-green-darken-1 mr-1" v-if="value">
         <GameIcon icon="Value 32" class="mr-1" />
         <span> {{ value }}</span>
       </div>
-      <div class="stat-item d-flex text-blue-darken-1 align-center mr-1">
+      <div class="stat-item d-flex text-blue-darken-1 align-center mr-1" v-if="workers">
         <GameIcon icon="Worker" class="mr-1" />
         <span> {{ workers }}</span>
       </div>
-      <div class="stat-item d-flex align-center text-orange-darken-1 mr-1">
+      <div class="stat-item d-flex align-center text-orange-darken-1 mr-1" v-if="player.income">
         <GameIcon icon="Income" class="mr-1" />
         <span> {{ player.income }}</span>
       </div>
-      <div class="stat-item d-flex align-center powerscore">
+      <div class="stat-item d-flex align-center powerscore" v-if="player.powerscore">
         <span> NET {{ player.powerscore }}</span>
       </div>
     </div>
@@ -22,12 +22,12 @@
 
 <script setup lang="ts">
 import GameIcon from '@/components/GameIcon.vue'
-import type { PlayerDataByWave } from '@/entities/game.type'
+import type { PlayerStats } from '@/entities/game.type'
 import { computed } from 'vue'
 
 const props = defineProps<{
   wave: number
-  player: PlayerDataByWave
+  player: PlayerStats
 }>()
 
 const value = computed(() => {
@@ -41,10 +41,8 @@ const workers = computed(() => {
 
 <style scoped lang="scss">
 .game-stats {
-  height: 25px;
   position: relative;
   &__wrapper {
-    position: absolute;
     top: 0;
   }
   .stat-item {

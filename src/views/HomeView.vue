@@ -34,6 +34,10 @@ const search = (event: Event) => {
   const value = (event.target as HTMLInputElement).value
   if (!value) return
 
+  if (value.length < 40) {
+    return router.push({ name: ROUTER_NAMES.PLAYER_HISTORY, query: { name: value } })
+  }
+
   router.push({ name: ROUTER_NAMES.GAME_RESULT, params: { id: value } })
 }
 </script>

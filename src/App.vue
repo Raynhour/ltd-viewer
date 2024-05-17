@@ -33,7 +33,7 @@ provide(INJECTIONS.API, auth)
   position: relative;
   overflow: hidden;
   video {
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
     min-width: 100%;

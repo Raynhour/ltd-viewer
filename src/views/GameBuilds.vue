@@ -42,7 +42,7 @@
           <tr class="fighters">
             <td>Fighters</td>
             <td v-for="player in currentWave" :key="player.playerId">
-              <GameStatsByWave :wave="wave" :player="player" />
+              <GameStats :wave="wave" :player="player" />
               <GameBoard :build="player.build" :champion-location="player.chosenChampionLocation" />
             </td>
           </tr>
@@ -113,7 +113,7 @@ import WaveIcon from '@/components/WaveIcon.vue'
 import TotalMythium from '@/components/game/GameMythiumTracker.vue'
 import GameKing from '@/components/game/GameKing.vue'
 import useTeams from '@/composables/useTeams'
-import GameStatsByWave from '@/components/game/GameStatsByWave.vue'
+import GameStats from '@/components/game/GameStats.vue'
 import useInfo from '../api/composables/useInfo'
 import type ApiContractor from '@/contractors/api.contractor'
 import injections from '@/consts/injections'
@@ -202,7 +202,7 @@ const secondTeamKingHP = computed(() => {
 })
 
 function selectWave(selectedWave: number) {
-  router.push({ query: { wave: selectedWave } })
+  router.replace({ query: { wave: selectedWave } })
 }
 
 const changeWave = (e: KeyboardEvent) => {

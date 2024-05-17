@@ -3,7 +3,7 @@ import type HttpContractor from '../contractors/http.contractor'
 import ErrorHandler from './errorHandler'
 
 export type Config = {
-  method: string
+  method?: string
   headers?: any
   data?: any
   params?: any
@@ -44,11 +44,7 @@ export default class Api implements ApiContractor {
     return res
   }
 
-  async post<Data, Res>(
-    url: string,
-    data: Data,
-    config?: Config
-  ): Promise<Res> {
+  async post<Data, Res>(url: string, data: Data, config?: Config): Promise<Res> {
     const _config = {
       method: 'post',
       data: data

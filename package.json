@@ -16,11 +16,15 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@vueuse/components": "^10.9.0",
+    "@vueuse/core": "^10.9.0",
     "axios-mock-adapter": "^1.22.0",
+    "dayjs": "^1.11.11",
     "flush-promises": "^1.0.2",
     "sass": "^1.72.0",
     "vite-plugin-vuetify": "^2.0.2",
     "vue": "^3.4.15",
+    "vue-intersect": "^3.0.0",
     "vue-query": "^1.26.0",
     "vue-router": "^4.2.5",
     "vuetify": "^3.5.8"

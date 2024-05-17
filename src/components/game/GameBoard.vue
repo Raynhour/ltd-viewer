@@ -1,21 +1,30 @@
 <template>
   <div class="test">
     <div class="game-board">
-      <GameUnit
-        v-for="unit in build"
-        :champion-location="championLocation"
-        :key="unit"
+      <GameCoords
+        :championCoords="championCoords"
         :unit="unit"
         :rows="rows"
-        :units="Units"
-        :championCoords="championCoords"
-      />
+        v-for="unit in build"
+        :key="unit"
+      >
+        <template #default="{ unitPosition, hasChampion }">
+          <GameUnit
+            :champion-location="championLocation"
+            :unit="unit"
+            :units="Units"
+            :style="unitPosition"
+            :has-champion="hasChampion"
+          />
+        </template>
+      </GameCoords>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import GameUnit from './GameUnit.vue'
+import GameCoords from './GameCoords.vue'
 import Units from '@/api/prefetched/units.json'
 import { championCoords as _championCoords } from '@/helpers/playerHelper'
 
