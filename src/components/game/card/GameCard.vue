@@ -56,7 +56,11 @@
       </div>
       <div class="game-card__text">
         Legion:
-        <img class="game-card__icon" :src="mastermindIconPath(searchedPlayer.legion)" />
+        <MastermindIcon
+          width="15px"
+          :is-megamind="searchedPlayer.megamind"
+          :mastermind="searchedPlayer.legion"
+        />
       </div>
       <div class="game-card__text">
         Spell:
@@ -99,6 +103,7 @@ import WaveIcon from '@/components/WaveIcon.vue'
 import GameIcon from '@/components/GameIcon.vue'
 import GameUnit from '../GameUnit.vue'
 import GameStats from '../GameStats.vue'
+import MastermindIcon from '../../MastermindIcon.vue'
 import { queueTypeEnum, type Game, type PlayersDataEntity } from '@/entities/game.type'
 import { DefaultPlayerData } from '@/entities/game.type'
 import { computed } from 'vue'
@@ -106,7 +111,6 @@ import { isPlayerWin, playerResultText, rankIcon } from '@/helpers/playerHelper'
 import useDateAdapter from '@/composables/useDateAdapter'
 import useGames from '@/composables/useGames'
 import Units from '@/api/prefetched/units.json'
-import { mastermindIconPath } from '@/helpers/images'
 import useTeams from '@/composables/useTeams'
 import routerNames from '@/router/routerNames'
 

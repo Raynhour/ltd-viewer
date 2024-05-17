@@ -29,15 +29,17 @@
       <td class="text-left">leak caught - {{ player.legion }}</td> -->
       <td class="text-left">{{ player.income }}</td>
       <td class="text-left"><img clas="icon" :src="iconPath(player.chosenSpell)" /></td>
-      <td class="text-left"><img class="icon" :src="mastermindIconPath(player.legion)" /></td>
+      <td class="text-left">
+        <MastermindIcon :mastermind="player.legion" :is-megamind="player.megamind" />
+      </td>
     </tr>
   </v-table>
 </template>
 
 <script setup lang="ts">
 import type { PlayersDataEntity } from '@/entities/game.type'
-
-import { iconPath, mastermindIconPath } from '@/helpers/images'
+import MastermindIcon from '../MastermindIcon.vue'
+import { iconPath } from '@/helpers/images'
 
 defineProps<{
   players: PlayersDataEntity[]
