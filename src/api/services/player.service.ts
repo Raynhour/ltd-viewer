@@ -24,7 +24,7 @@ export default class PlayerService implements PlayerServiceContractor {
 
   async history(name: string, { pageParam = 0 }: queryPagination): Promise<HistoryResponse> {
     const params = {
-      limit: 20,
+      limit: 15,
       offset: pageParam
     }
     const res = (await this.api.get(PATH.PLAYER.HISTORY(name), { params })) as Game[]

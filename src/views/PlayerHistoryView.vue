@@ -1,17 +1,6 @@
 <template>
-  <!-- <header class="header d-flex position-relative">
-    <v-btn
-      variant="text"
-      :to="{ name: routerNames.HOME }"
-      color="orange"
-      icon="mdi-arrow-left"
-    ></v-btn>
-    <div id="header" class="container w-100"></div>
-  </header> -->
-
   <v-container class="fill-height" v-if="isLoading || error">
     <v-responsive class="text-center align-center items-center fill-height">
-      <!-- <h1 class="text-h2 font-weight-bold">Search</h1> -->
       <template v-if="isLoading">
         <v-progress-circular
           color="primary"
@@ -28,13 +17,26 @@
   </v-container>
   <div class="container fill-height mt-5" v-else>
     <v-responsive class="text-center fill-height" v-if="data">
+      <v-row>
+        <v-col cols="12" class="align-center">
+          <v-text-field
+            class="mt-3"
+            name="search"
+            color="primary"
+            append-inner-icon="mdi-magnify"
+            variant="solo-filled"
+            label="Nickname or Game ID"
+            :modelValue="playerName"
+            @change="searchHandler"
+          />
+        </v-col>
+      </v-row>
       <!-- <p>{{ formattedData.games }}</p> -->
 
       <!-- <div v-intersection-observer="testEnter" v-if="!isLoading && formattedData.games.length">
         test
       </div> -->
 
-      <div class="text-h4 text-primary title font-weight-bold">{{ playerName }} history</div>
       <game-card
         v-for="(game, index) in formattedData.games"
         :playerName="playerName"
@@ -42,11 +44,10 @@
         :key="index"
       />
       <div
+        class="intersection"
         v-intersection-observer="handleScroll"
-        v-if="!isLoading && !isFetching && formattedData.games.length"
-      >
-        test
-      </div>
+        v-if="!isLoading && !isFetching && formattedData.games.length && hasNextPage"
+      ></div>
       <v-progress-circular
         v-else-if="isFetching"
         color="primary"
@@ -70,6 +71,7 @@ import { vIntersectionObserver } from '@vueuse/components'
 import type { UseQueryReturnType } from 'vue-query'
 import type { InfiniteQueryObserverResult } from 'react-query/types/core'
 import type { HistoryResponse } from '@/api/services/player.service'
+import useSearch from '@/composables/useSearch'
 
 declare type UseInfiniteQueryReturnType<TData, TError> = UseQueryReturnType<
   TData,
@@ -80,13 +82,19 @@ declare type UseInfiniteQueryReturnType<TData, TError> = UseQueryReturnType<
 const { api } = useDefaultApi()
 const route = useRoute()
 
-const { history } = usePlayer(api)
-const res = history(route.query.name as string)
-const { isLoading, data, error, isFetching, fetchNextPage } = res as UseInfiniteQueryReturnType<
-  HistoryResponse,
-  Error
->
 const playerName = computed((): string => (route.query?.name || '').toString())
+
+const { search } = useSearch()
+
+const { history } = usePlayer(api)
+const res = history(playerName)
+const { isLoading, data, error, isFetching, fetchNextPage, hasNextPage } =
+  res as UseInfiniteQueryReturnType<HistoryResponse, Error>
+
+function searchHandler(event: Event) {
+  const value = (event.target as HTMLInputElement).value
+  search(value)
+}
 
 const formattedData = computed(() => {
   const mergedData = data.value?.pages.reduce((acc: Game[], page: HistoryResponse) => {
@@ -123,5 +131,10 @@ function handleScroll([{ isIntersecting }]: IntersectionObserverEntry[]) {
 .header {
   background-color: rgba(49, 62, 61, 0.85) !important;
   min-height: 50px;
+}
+
+.intersection {
+  height: 10px;
+  width: 10px;
 }
 </style>

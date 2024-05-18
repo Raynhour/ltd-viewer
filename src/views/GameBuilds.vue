@@ -42,7 +42,9 @@
           <tr class="fighters">
             <td>Fighters</td>
             <td v-for="player in currentWave" :key="player.playerId">
-              <GameStats :wave="wave" :player="player" />
+              <div class="stats">
+                <GameStats :wave="wave" :player="player" />
+              </div>
               <GameBoard :build="player.build" :champion-location="player.chosenChampionLocation" />
             </td>
           </tr>
@@ -248,6 +250,18 @@ const { firstTeam, secondTeam } = useTeams(playersData)
 
   .table {
     background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  .stats {
+    height: 25px;
+    &::v-deep {
+      .game-stats__wrapper {
+        position: absolute;
+      }
+    }
+    .stat-item {
+      position: absolute;
+    }
   }
 }
 

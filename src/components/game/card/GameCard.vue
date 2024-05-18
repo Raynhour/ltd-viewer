@@ -120,7 +120,9 @@ const props = defineProps<{
 }>()
 
 const searchedPlayer = computed((): PlayersDataEntity => {
-  const player = props.game.playersData?.find((player) => player.playerName === props.playerName)
+  const player = props.game.playersData?.find(
+    (player) => player.playerName.toLocaleLowerCase() === props.playerName.toLocaleLowerCase()
+  )
   return player || new DefaultPlayerData()
 })
 
