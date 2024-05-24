@@ -36,25 +36,32 @@
       <!-- <div v-intersection-observer="testEnter" v-if="!isLoading && formattedData.games.length">
         test
       </div> -->
-
-      <game-card
-        v-for="(game, index) in formattedData.games"
-        :playerName="playerName"
-        :game="game"
-        :key="index"
-      />
-      <div
-        class="intersection"
-        v-intersection-observer="handleScroll"
-        v-if="!isLoading && !isFetching && formattedData.games.length && hasNextPage"
-      ></div>
-      <v-progress-circular
-        v-else-if="isFetching"
-        color="primary"
-        indeterminate="disable-shrink"
-        size="50"
-        width="8"
-      ></v-progress-circular>
+      <v-row>
+        <v-col cols="2">
+        <PlayerStats :games="formattedData.games" :player-name="playerName" />
+        </v-col>
+        <v-col>
+          <game-card
+            v-for="(game, index) in formattedData.games"
+            :playerName="playerName"
+            :game="game"
+            :key="index"
+          />
+          <div
+            class="intersection"
+            v-intersection-observer="handleScroll"
+            v-if="!isLoading && !isFetching && formattedData.games.length && hasNextPage"
+          ></div>
+          <v-progress-circular
+            v-else-if="isFetching"
+            color="primary"
+            indeterminate="disable-shrink"
+            size="50"
+            width="8"
+          ></v-progress-circular>
+        </v-col>
+      </v-row>
+      
     </v-responsive>
   </div>
 </template>
@@ -72,6 +79,7 @@ import type { UseQueryReturnType } from 'vue-query'
 import type { InfiniteQueryObserverResult } from 'react-query/types/core'
 import type { HistoryResponse } from '@/api/services/player.service'
 import useSearch from '@/composables/useSearch'
+import PlayerStats from '@/components/player/PlayerStats.vue'
 
 declare type UseInfiniteQueryReturnType<TData, TError> = UseQueryReturnType<
   TData,
@@ -116,7 +124,7 @@ function handleScroll([{ isIntersecting }]: IntersectionObserverEntry[]) {
 
 <style lang="scss">
 .container {
-  max-width: 900px;
+  max-width: 1200px;
   width: 100%;
   margin: 0 auto;
   align-items: center;

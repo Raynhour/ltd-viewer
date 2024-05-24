@@ -45,7 +45,7 @@
               <div class="stats">
                 <GameStats :wave="wave" :player="player" />
               </div>
-              <GameBoard :build="player.build" :champion-location="player.chosenChampionLocation" />
+              <GameBoard :build="player.build" :champion-location="player.chosenChampionLocation" :spell="player.chosenSpell" :chosenSpellLocation="player.chosenSpellLocation" />
             </td>
           </tr>
           <tr>
@@ -146,6 +146,8 @@ const currentWave = computed<PlayerDataByWave[]>(() => {
   return playersData.value.map((player) => {
     const _wave = wave.value - 1
     return {
+      chosenSpell: player.chosenSpell,
+      chosenSpellLocation: player.chosenSpellLocation,
       playerId: player.playerId,
       build: player.buildPerWave[_wave],
       mercenaries: player.mercenariesReceivedPerWave[_wave],

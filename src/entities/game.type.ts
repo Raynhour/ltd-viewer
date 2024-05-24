@@ -65,7 +65,7 @@ export interface PlayersDataEntity {
   netWorth?: number
 }
 
-export interface PlayerStats {
+export interface PlayerStats extends Partial<PlayersDataEntity> {
   value: number
   workers: number
   income?: number

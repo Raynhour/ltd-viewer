@@ -5,16 +5,19 @@
         :championCoords="championCoords"
         :unit="unit"
         :rows="rows"
+        :spellCoords="chosenSpellCoords"
         v-for="unit in build"
         :key="unit"
       >
-        <template #default="{ unitPosition, hasChampion }">
+        <template #default="{ unitPosition, hasChampion, hasSpell }">
           <GameUnit
             :champion-location="championLocation"
             :unit="unit"
             :units="Units"
             :style="unitPosition"
             :has-champion="hasChampion"
+            :spell="spell"
+            :has-spell="hasSpell"
           />
         </template>
       </GameCoords>
@@ -30,7 +33,9 @@ import { championCoords as _championCoords } from '@/helpers/playerHelper'
 
 const props = defineProps<{
   build: string[] | null
-  championLocation: string
+  championLocation: string,
+  spell: string,
+  chosenSpellLocation: string
 }>()
 
 const rowsReal = 14
@@ -39,6 +44,9 @@ const columnsReal = 9
 const columns = columnsReal * 2
 
 const championCoords = _championCoords(props.championLocation, rows)
+
+const chosenSpellCoords = props.spell ? _championCoords(props.chosenSpellLocation, rows) : null
+
 </script>
 
 <style lang="scss" scoped>
@@ -53,8 +61,8 @@ const championCoords = _championCoords(props.championLocation, rows)
   background-size: calc(100% / v-bind(columnsReal)) calc(100% / v-bind(rowsReal));
   border-right: 1px solid rgba(0, 0, 0, 0.6);
   border-bottom: 1px solid rgba(0, 0, 0, 0.6);
-  background-image: linear-gradient(to right, rgba(red, 0.6) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(red, 0.6) 1px, transparent 1px);
+  background-image: linear-gradient(to right, rgba(189, 141, 141, 0.6) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(189, 141, 141, 0.6) 1px, transparent 1px);
   margin-top: 0.5%;
   background-repeat: repeat;
 }

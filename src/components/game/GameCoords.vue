@@ -1,5 +1,5 @@
 <template>
-  <slot :unitPosition="unitPosition" :hasChampion="hasChampion"></slot>
+  <slot :unitPosition="unitPosition" :hasChampion="hasChampion" :hasSpell="hasSpell"></slot>
 </template>
 
 <script setup lang="ts">
@@ -9,7 +9,8 @@ import { unitCoords } from '@/helpers/playerHelper'
 const props = defineProps<{
   unit: string
   rows: number
-  championCoords: { x: number; y: number }
+  championCoords: { x: number; y: number },
+  spellCoords: { x: number; y: number } | null
 }>()
 
 const unitPosition = computed(() => {
@@ -21,7 +22,17 @@ const unitPosition = computed(() => {
 })
 
 const hasChampion = computed(() => {
-  const coords = props.championCoords
+  return hasCoords(props.championCoords)
+})
+
+const hasSpell = computed(() => {
+  if(!props.spellCoords) return false
+  return hasCoords(props.spellCoords)
+})
+
+function hasCoords(_coords: { x: number; y: number }) {
+  
+  const coords = _coords
   if (
     coords.x === unitPosition.value.gridColumnStart &&
     coords.y === unitPosition.value.gridRowStart
@@ -29,10 +40,11 @@ const hasChampion = computed(() => {
     return true
   }
   return false
-})
+}
 
 defineExpose({
   unitPosition,
-  hasChampion
+  hasChampion,
+  hasSpell
 })
 </script>

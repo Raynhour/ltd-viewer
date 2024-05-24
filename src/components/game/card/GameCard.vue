@@ -146,7 +146,7 @@ const stats = computed(() => {
 const { mvpScores } = useGames(props.game)
 
 const playerScore = computed(() => {
-  return mvpScores.value.find((score) => score.playerName === props.playerName)?.positionText
+  return mvpScores.value.find((score) => score.playerName.toLocaleLowerCase() == props.playerName.toLocaleLowerCase())?.positionText
 })
 
 // TODO: refactor useTeams to accept not reactive data
@@ -177,6 +177,9 @@ const eloChange = computed((): string => {
   border-radius: 6px;
   position: relative;
   text-decoration: none;
+  &:first-child {
+    margin-top: 0px;
+  }
   &::after {
     content: '';
     position: absolute;
